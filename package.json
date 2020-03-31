@@ -5,12 +5,13 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "backend": "nodemon index.js",
-        "start": "node index.js"
+        "backend": "nodemon server/index.js",
+        "start": "node server/index.js"
     },
     "author": "George-Kim",
     "license": "ISC",
     "dependencies": {
+        "axios": "^0.19.2",
         "bcrypt": "^4.0.1",
         "body-parser": "^1.19.0",
         "cookie-parser": "^1.4.5",
