@@ -1,8 +1,8 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
-import LandingPage from './components/views/LandingPage/LandingPage'
-import LoginPage from './components/views/LoginPage/LoginPage'
-import RegisterPage from './components/views/RegisterPage/RegisterPage'
+import React from 'react';
+import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
+import LandingPage from './components/views/LandingPage/LandingPage';
+import LoginPage from './components/views/LoginPage/LoginPage';
+import RegisterPage from './components/views/RegisterPage/RegisterPage';
 function App() {
     return (
         <Router>
@@ -12,7 +12,7 @@ function App() {
                 <Route path="/register" component={RegisterPage} />
             </Switch>
         </Router>
-    )
+    );
 }
 
-export default App
+export default App;
