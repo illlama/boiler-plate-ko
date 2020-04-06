@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
-
-const LoginPage = props => {
+import { withRouter } from 'react-router-dom';
+const LoginPage = (props) => {
     const dispatch = useDispatch();
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
 
-    const onEmailHandler = event => {
+    const onEmailHandler = (event) => {
         setEmail(event.currentTarget.value);
     };
-    const onPasswordHandler = event => {
+    const onPasswordHandler = (event) => {
         setPassword(event.currentTarget.value);
     };
-    const onSubmitHandler = event => {
+    const onSubmitHandler = (event) => {
         event.preventDefault();
 
         let body = {
@@ -21,7 +21,7 @@ const LoginPage = props => {
             password: Password,
         };
 
-        dispatch(loginUser(body)).then(response => {
+        dispatch(loginUser(body)).then((response) => {
             if (response.payload.loginSuccess) {
                 props.history.push('/');
             }
@@ -50,4 +50,4 @@ const LoginPage = props => {
     );
 };
 
-export default LoginPage;
+export default withRouter(LoginPage);

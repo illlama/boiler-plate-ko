@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../_actions/user_action';
+import { withRouter } from 'react-router-dom';
 
-const RegisterPage = props => {
+const RegisterPage = (props) => {
     const dispatch = useDispatch();
     const [Email, setEmail] = useState('');
     const [Name, setName] = useState('');
     const [Password, setPassword] = useState('');
     const [ConfirmPassword, setConfirmPassword] = useState('');
 
-    const onEmailHandler = event => {
+    const onEmailHandler = (event) => {
         setEmail(event.currentTarget.value);
     };
-    const onNameHandler = event => {
+    const onNameHandler = (event) => {
         setName(event.currentTarget.value);
     };
-    const onPasswordHandler = event => {
+    const onPasswordHandler = (event) => {
         setPassword(event.currentTarget.value);
     };
-    const onConfirmPasswordHandler = event => {
+    const onConfirmPasswordHandler = (event) => {
         setConfirmPassword(event.currentTarget.value);
     };
-    const onSubmitHandler = event => {
+    const onSubmitHandler = (event) => {
         event.preventDefault();
-        console.log('onsubmit!!!!!!!!!!!!');
         if (Password !== ConfirmPassword) {
             return alert('비밀번호 확인이 일치하지 않습니다.');
         }
@@ -33,7 +33,7 @@ const RegisterPage = props => {
             password: Password,
         };
 
-        dispatch(registerUser(body)).then(response => {
+        dispatch(registerUser(body)).then((response) => {
             if (response.payload.success) {
                 props.history.push('/login');
             } else {
@@ -68,4 +68,4 @@ const RegisterPage = props => {
     );
 };
 
-export default RegisterPage;
+export default withRouter(RegisterPage);
