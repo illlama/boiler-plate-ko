@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
 import { withRouter } from 'react-router-dom';
+
 const LoginPage = (props) => {
     const dispatch = useDispatch();
     const [Email, setEmail] = useState('');
@@ -44,7 +45,7 @@ const LoginPage = (props) => {
                 <label>Password</label>
                 <input type="password" value={Password} onChange={onPasswordHandler} />
                 <br />
-                <button type="submit">Login</button>
+                <button type="submit">Login을 해 봅시다!!</button>
             </form>
         </div>
     );

@@ -25,7 +25,7 @@ const RegisterPage = (props) => {
     const onSubmitHandler = (event) => {
         event.preventDefault();
         if (Password !== ConfirmPassword) {
-            return alert('비밀번호 확인이 일치하지 않습니다.');
+            return alert('비밀번호가 서로 일치해야 합니다.');
         }
         let body = {
             email: Email,
@@ -62,7 +62,7 @@ const RegisterPage = (props) => {
                 <label>Confirm Password</label>
                 <input type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} autoComplete="on" />
                 <br />
-                <button type="submit">Register</button>
+                <button type="submit">Register를 해 주세여!</button>
             </form>
         </div>
     );
